@@ -1,0 +1,112 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block title %}Contact Us{% endblock title %}
+
+{% block content %}
+{% include 'partials/hero-section.html' %}
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="{% static 'assets/img/breadcrumb.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Contact Us</h2>
+                    <div class="breadcrumb__option">
+                        <a href="{% url 'core:index' %}">Home</a>
+                        <span class="breadcrumb__separator"><i class="fa fa-angle-right"></i></span>
+                        <span>Contact Us</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_phone"></span>
+                    <h4>Phone</h4>
+                    <p>+8801537000984</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_pin_alt"></span>
+                    <h4>Address</h4>
+                    <p>Ashulia,Savar</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_clock_alt"></span>
+                    <h4>Open time</h4>
+                    <p>10:00 am to 23:00 pm</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                <div class="contact__widget">
+                    <span class="icon_mail_alt"></span>
+                    <h4>Email</h4>
+                    <p>hsami3508@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+
+<!-- Map Begin -->
+<div class="map">
+    <iframe
+        src="google.com/maps/place/23.863894,90.325873/data=!4m6!3m5!1s0!7e2!8m2!3d23.8638937!4d90.3258726!17m2!4m1!1e3!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBjI2LjYuMRgAIPjADSqTASw5NDI2NzcyNyw5NDI5MjE5NSw5NDI5OTUzMiwxMDA3OTY0OTgsMTAwNzk2NTMxLDk0Mjg0NDg3LDk0MjgwNTc2LDk0MjA3Mzk0LDk0MjA3NTA2LDk0MjA4NTA2LDk0MjE4NjUzLDk0MjI5ODM5LDk0Mjc1MTY4LDk0Mjc5NjE5LDk0MjYyNzMzLDEwMDc5MTQ4M0ICQkQ%3D&skid=a1133082-c870-42fc-ad34-5f580fd8e7c0&g_st=afm"
+        height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <div class="map-inside">
+        <i class="icon_pin"></i>
+        <div class="inside-widget">
+            <h4>Dhaka,Bangladesh</h4>
+            <ul>
+                <li>Phone: +8801313186694</li>
+                <li>Add: Daffodil Smart City, Savar</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Map End -->
+
+<!-- Contact Form Begin -->
+<div class="contact-form spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact__form__title">
+                    <h2>Leave Message</h2>
+                </div>
+            </div>
+        </div>
+        <form id="ajax-contact-form" method="POST">
+        	{% csrf_token %}
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <input name="name" id="name" type="text" placeholder="Your name">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input name="email" id="email" type="text" placeholder="Your Email">
+                </div>
+                <div class="col-lg-12 text-center">
+                    <textarea name="message" id="message" placeholder="Your message"></textarea>
+                    <button id="ajax-contact-form" type="submit" class="site-btn">SEND MESSAGE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Contact Form End -->
+
+{% endblock content %}
